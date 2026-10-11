@@ -1,0 +1,139 @@
+*{
+    font-family: Poppins;
+}
+body{
+    margin: 0;
+    display: block;
+    --textColor : #528EFC;
+    --background: #688EBB;
+    --white: #FEFEFE;
+    background-color: var(--background);
+}
+.main {
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.header{
+    flex: 1.5;
+    width: 100%;
+    margin: 0;
+    border-bottom: 1px solid black;
+}
+.calculator{
+    flex: 7;
+    background-color: #17181A;
+    min-height: 500px;
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    border-radius: 30px;
+    gap: 10px;
+    padding: 10px;
+}
+/* Screen */
+
+.screen {
+    flex: 1;
+    border-radius: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+}
+.features{
+    flex: 0.5;
+    align-items: center;
+    display: flex;
+}
+/* Night Mode */
+.mode{
+    background-color: aqua;
+}
+
+
+.calculation{
+    flex: 0.5;
+    align-items: center;
+    justify-content: flex-end;
+    display: flex;
+    color: var(--white);
+}
+.sum{
+    flex: 2;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-width: 0;
+    overflow: hidden;
+}
+.text-container{
+    font-size: 50px;
+    white-space: nowrap;
+    color: var(--white);
+}
+
+
+.history{
+    margin-left: auto;
+}
+
+
+.calulation{
+    flex: 1;
+    background-color: blueviolet;
+}
+
+.calc-bottom {
+    flex: 2;
+    border-radius: 20px;
+    display: flex;
+    gap: 15px;              
+    padding: 10px;          
+    box-sizing: border-box; 
+    flex-direction: column;
+}
+.row{
+    flex: 1;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+
+}
+
+button {
+    flex: 1;
+    box-sizing: border-box;
+    border-radius: 20px;
+    background-color: #303136;
+    color: var(--white);
+    border: none;
+    font-size: x-large;
+    box-shadow: 1px 1px 5px #688EBB;
+    justify-content: center;
+} 
+.operation{
+    color: var(--white);
+    background-color: orange;
+    font-size: xx-large;
+}
+.back, .clear {
+    background-color: gray;
+    color: var(--white);
+    font-size: xx-large;
+}
+
+.footer{
+    flex: 1.5;
+    background-color: black;
+    
+}
+
+
