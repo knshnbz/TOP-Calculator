@@ -28,7 +28,7 @@ body{
 .calculator{
     flex: 7;
     background-color: #17181A;
-    min-height: 500px;
+    min-height: 550px;
     width: 360px;
     display: flex;
     flex-direction: column;
@@ -59,12 +59,13 @@ body{
 }
 
 
-.calculation{
-    flex: 0.5;
+.historyTemp{
+    flex: 1;
     align-items: center;
     justify-content: flex-end;
     display: flex;
     color: var(--white);
+    font-weight: 300;
 }
 .sum{
     flex: 2;
@@ -73,11 +74,14 @@ body{
     align-items: center;
     min-width: 0;
     overflow: hidden;
+    box-shadow: inset 3px 3px 10px #020202;
+    padding: 3px;
 }
 .text-container{
     font-size: 50px;
     white-space: nowrap;
     color: var(--white);
+    
 }
 
 
@@ -85,11 +89,6 @@ body{
     margin-left: auto;
 }
 
-
-.calulation{
-    flex: 1;
-    background-color: blueviolet;
-}
 
 .calc-bottom {
     flex: 2;
@@ -116,9 +115,15 @@ button {
     color: var(--white);
     border: none;
     font-size: x-large;
-    box-shadow: 1px 1px 5px #688EBB;
+    box-shadow: 1px 1px 5px #010101;
     justify-content: center;
+    transition: box-shadow ease-in-out 0.1s;
 } 
+
+button:active, .pressed {
+    box-shadow: 1px 1px 5px orange;
+}
+
 .operation{
     color: var(--white);
     background-color: orange;
