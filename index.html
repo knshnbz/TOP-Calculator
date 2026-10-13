@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,17 +13,17 @@
             <div class="screen">
                 <div class="features">
                     <div class="mode">
-                        <label class="switch">
+                        <!-- <label class="switch">
                             <input type="checkbox">
                             <span class="slider"></span>
-                        </label>
+                        </label> -->
                     </div>
-                    <div class="history">
+                    <!-- <div class="history">
                         <button class="history">Hi</button>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="historyTemp"></div>
-                <div class="sum"><div class="text-container">123333333</div></div>
+                <div class="sum"><div class="text-container">0</div></div>
             </div>
             <div class="calc-bottom">
                 <div class="row">
@@ -45,7 +45,7 @@
                     <button class="operation" data-key="-">-</button>
                 </div>
                 <div class="row">
-                    <button class="num pressed" id="1" data-key="1">1</button>
+                    <button class="num" id="1" data-key="1">1</button>
                     <button class="num" id="2" data-key="2">2</button>
                     <button class="num" id="3" data-key="3">3</button>
                     <button class="operation" data-key="+">+</button>
@@ -58,7 +58,17 @@
                 </div>
             </div>
         </div>
-        <div class="footer"></div>
+        <div class="" id="cleanWave"></div>
+        <div class="footer">
+            <p>
+                &copy; <span id="year"></span> Kaan ·
+                <img src="github.ico" alt="GitHub">
+                <a href="https://github.com/knshnbz/TOP-Calculator" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                </a>
+                
+            </p>
+        </div>
     </div>
 
 

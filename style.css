@@ -5,7 +5,7 @@ body{
     margin: 0;
     display: block;
     --textColor : #528EFC;
-    --background: #688EBB;
+    --background:#17181A;
     --white: #FEFEFE;
     background-color: var(--background);
 }
@@ -23,7 +23,6 @@ body{
     flex: 1.5;
     width: 100%;
     margin: 0;
-    border-bottom: 1px solid black;
 }
 .calculator{
     flex: 7;
@@ -36,11 +35,13 @@ body{
     border-radius: 30px;
     gap: 10px;
     padding: 10px;
+    box-shadow: 2px 2px 15px black;
+    z-index: 2;
 }
 /* Screen */
 
 .screen {
-    flex: 1;
+    flex: 0.8;
     border-radius: 20px;
     box-sizing: border-box;
     display: flex;
@@ -49,7 +50,7 @@ body{
     gap: 10px;
 }
 .features{
-    flex: 0.5;
+    flex: 0;
     align-items: center;
     display: flex;
 }
@@ -60,25 +61,35 @@ body{
 
 
 .historyTemp{
-    flex: 1;
+    flex: 1 30px;
     align-items: center;
     justify-content: flex-end;
     display: flex;
     color: var(--white);
     font-weight: 300;
+    overflow: hidden;
+    box-shadow: inset 1px 1px 10px #020202;
+    padding: 3px 10px;
+    border-radius: 5px;
+    background-color: #303136;
+    box-sizing: border-box;
+    min-height: 30px;
 }
 .sum{
-    flex: 2;
+    flex: 2 60px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     min-width: 0;
     overflow: hidden;
-    box-shadow: inset 3px 3px 10px #020202;
-    padding: 3px;
+    box-shadow: inset 1px 1px 10px #020202;
+    padding: 3px 10px; 
+    border-radius: 20px;  
+    min-height: 60px;
 }
 .text-container{
-    font-size: 50px;
+    font-size: 60px;
+    font-weight: 400;
     white-space: nowrap;
     color: var(--white);
     
@@ -121,7 +132,7 @@ button {
 } 
 
 button:active, .pressed {
-    box-shadow: 1px 1px 5px orange;
+    box-shadow: 1px 1px 5px var(--white);
 }
 
 .operation{
@@ -137,8 +148,82 @@ button:active, .pressed {
 
 .footer{
     flex: 1.5;
-    background-color: black;
+    z-index: 2;
     
 }
 
 
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%      { transform: translateX(-8px); }
+    40%      { transform: translateX(8px); }
+    60%      { transform: translateX(-12px); }
+    80%      { transform: translateX(12px); }
+}
+
+.shake {
+    animation-name: shake;
+    animation-duration: 0.5s;
+}
+
+@keyframes scale {
+    0%{ width: 20px; 
+        box-shadow: 
+    0 0 1px 2px var(--background),
+    0 0 2px 3px var(--white),
+    0 0 1px 12px var(--background),
+    0 0 2px 18px var(--white),
+    0 0 1px 26px var(--background),
+    0 0 2px 32px var(--white)
+    ;
+    }
+    100%      { width: 2000px;
+    box-shadow: 
+    0 0 10px 20px var(--background),
+    0 0 20px 30px var(--white),
+    0 0 10px 120px var(--background),
+    0 0 20px 180px var(--white),
+    0 0 10px 260px var(--background),
+    0 0 20px 320px var(--white)
+    ;}
+}
+
+.circusEl {
+    animation-name: scale;
+    animation-duration: 2s;
+}
+
+#cleanWave{
+    position: absolute;
+    aspect-ratio: 1;
+    width: 20px;
+    background-color: var(--background);
+    border-radius: 50%;
+    box-shadow: 
+    0 0 1px 2px var(--background),
+    0 0 2px 3px var(--white),
+    0 0 1px 12px var(--background),
+    0 0 2px 18px var(--white),
+    0 0 1px 26px var(--background),
+    0 0 2px 32px var(--white)
+    ;
+    z-index: 1;
+
+}
+
+.footer p {
+    font-size: 15px;
+    box-sizing: border-box;
+    margin: 30px;
+    color: rgb(144, 143, 142);
+    font-weight: 400;
+}
+.footer a{
+    color: rgb(144, 143, 142);
+    text-decoration: none;
+
+}
+.footer img{
+    transform: translateY(2px);
+}

@@ -1,6 +1,13 @@
 let displayEl = document.querySelector(".text-container");
 let buttons = document.querySelectorAll("button");
 let lastCalculationEl = document.querySelector(".historyTemp")
+let calculator = document.querySelector(".calculator")
+let cleanWave = document.querySelector("#cleanWave")
+let year = document.querySelector("#year")
+
+year.innerText = new Date().getFullYear();
+
+waveEffect();
 
 const digitKeys = [
     "0",
@@ -134,6 +141,7 @@ function toggleSign() {
 
 function calculate() {
     if (secondNumber === "" || firstNumber === "") {
+        shakeScreen()
         return;
     }
     switch (operator) {
@@ -159,6 +167,7 @@ function calculate() {
     if (!isFinite(result)) {
 
         clearAll()
+        shakeScreen()
         return;
         
     }
@@ -212,7 +221,8 @@ function handleInput(key) {
     } else if (key === "Enter" || key === "=") {
         calculate()
     } else if (key === "Escape") {
-        clearAll()
+        waveEffect();
+        clearAll();
     } else if (key === "Backspace") {
         deleteLast()
     } else if (key === "negate"){
@@ -238,6 +248,24 @@ function flashButton(key) {
 
 }
 
+// Shake Effect
+// @keyframes
+
+function shakeScreen() {
+    calculator.classList.add("shake");
+    calculator.addEventListener("animationend", () => {
+        calculator.classList.remove("shake");
+    }, { once: true });
+}
+
+// Wave Effect
+
+function waveEffect() {
+    cleanWave.classList.add("circusEl");
+    cleanWave.addEventListener("animationend", () => {
+        cleanWave.classList.remove("circusEl");
+    }, { once: true });
+}
 
 // BUTTON HANDLING
 
