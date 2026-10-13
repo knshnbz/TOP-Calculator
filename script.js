@@ -178,14 +178,20 @@ function deleteLast() {
         clearAll();
         return;
     }
-    if (displayEl.innerText !== "") {
-        if (secondNumber !== "") {
-            secondNumber = secondNumber.slice(0,-1)
-        } else if (secondNumber === "" && operator !== "") {
-            operator = ""
-        } else if (secondNumber === "" && operator === "" && firstNumber !== ""){
-            firstNumber = firstNumber.slice(0,-1)
-        }
+    let current = operator === "" ? firstNumber : secondNumber;
+    let operatorRemoved = false;
+    if (current.startsWith("-") && current.length === 2) {
+        current = ""
+    } else if (current !== "") {
+        current = current.slice(0,-1)
+    } else {
+        operator = ""
+        operatorRemoved = true;
+    }
+    if (operator === "" && !operatorRemoved) {
+        firstNumber = current;
+    } else {
+        secondNumber = current;
     }
     updateScreen()
     
@@ -193,6 +199,7 @@ function deleteLast() {
 // Get Input from both (Keyboard & Button) handleInput
 
 function handleInput(key) {
+    flashButton(key)
     if (digitKeys.includes(key)) {
         appendDigit(key)
     } else if (operatorKeys.includes(key)) {
@@ -242,7 +249,6 @@ buttons.forEach((button) => button.addEventListener("click", () => {
 // KEYBOARD HANDLING
 
 document.addEventListener("keydown", (event) => {
-    flashButton(event.key)
     if (event.metaKey || event.ctrlKey) return; 
     const key = event.key;
     if (digitKeys.includes(key) || operatorKeys.includes(key) || controlKeys.includes(key)) {
